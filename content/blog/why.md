@@ -1,6 +1,6 @@
 +++
 title = "Why?..."
-date = 2023-06-05
+date = 2023-06-22
 slug = "why-i-made-this-website"
 description = "Why I chose to create my personal website with the static site generator Zola"
 [taxonomies]
