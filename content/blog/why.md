@@ -10,7 +10,7 @@ tags=["web"]
 featured = true
 +++
 
-Why did I create this website? I have been learning programming in Python for the past 18 months and have developed a keen interest in testing and automation. I have found that there are limited resources in this area and so I decided that I wanted to create a online presence and share my knowledge. Therefore I decided to create a personal website where I can create content, provide resources and share anything that I find interesting. 
+Why did I create this website? I have been learning programming in Python for the past 18 months and have developed a keen interest in testing and automation. I have found that there are limited resources in this area and so I decided that I wanted to create an online presence and share my knowledge. Therefore I have created this personal website where I can create content, provide resources and share anything that I find interesting. 
 
 <!-- more -->
 
