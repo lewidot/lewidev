@@ -1,0 +1,187 @@
+@font-face {
+    font-family: iAWriterQuattroS;
+    src: url(fonts/iAWriterQuattroS-Regular.woff2);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: iaWriterQuattroS, sans-serif, "JetBrains Mono", monospace;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+
+}
+
+:root {
+    --bg-colour: #f7f7f4;
+    --text-colour: #4b5361;
+    --accent-primary: #084ccf;
+    --accent-secondary: #1d67f6;
+    --accent-highlight: #4f87f630;
+}
+
+
+
+body {
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
+    height: 100%;
+    line-height: 1.75;
+}
+
+a,
+ul,
+h3 {
+    padding: 0.5rem;
+}
+
+h1,
+h2,
+p,
+nav {
+    padding: 1rem;
+}
+
+p a {
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    padding: 0.5rem;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+
+}
+
+section {
+    flex: 1;
+    padding: 1.5rem 2rem;
+}
+
+
+header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+nav a {
+    text-decoration: none;
+}
+
+
+a {
+    transition: all 0.5s ease;
+    color: var(--accent-primary);
+
+}
+
+a:hover {
+    color: var(--accent-secondary);
+}
+
+.blog-list {
+    list-style-type: ">";
+    margin: 0.5rem 0;
+}
+
+.tag-list {
+    list-style-type: "";
+    margin: 0.5rem 0;
+}
+
+
+
+footer {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
+ul {
+    margin-left: 2rem;
+}
+
+pre {
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1rem;
+    overflow: auto;
+}
+
+code span {
+    font-family: "JetBrains Mono";
+    font-size: 15px;
+
+}
+
+code:not(.language-python, .language-rust, .language-sh, .language-go) {
+    border-radius: 5px;
+    background-color: var(--accent-highlight);
+    font-family: "JetBrains Mono";
+    padding: 0 0.25rem;
+    color: #1d67f6;
+    font-size: 14px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-family: Roboto;
+    color: var(--accent-primary);
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-family: Roboto;
+    color: var(--accent-primary);
+    margin-top: 2rem;
+}
+
+.title {
+    margin-bottom: 1rem;
+}
+
+.archive {
+    margin-bottom: 1rem;
+}
+
+.archive h2 {
+    padding: 0.25rem;
+}
+
+
+
+
+.subtitle {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+
+img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+.not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    height: 65vh;
+}

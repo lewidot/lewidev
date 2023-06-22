@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for year, posts in section.pages | group_by(attribute="year") %}
+<div class="archive">
+    <h2>{{ year }}</h2>
+
+    <ul>
+        {% for post in posts %}
+        <li class="blog-list"><a href="{{ post.permalink | safe }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+{% endfor %}
+
+
+{% endblock content %}

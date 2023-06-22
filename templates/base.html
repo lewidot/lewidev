@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Set url variable -->
+{%- if current_url -%}
+{%- set url = current_url -%}
+{%- else -%}
+{%- set url = config.base_url ~ "/404/" -%}
+{%- endif -%}
+
+<!-- Set page/section specific variables -->
+{%- if page -%}
+{%- set description = page.description -%}
+{%- set title = page.title -%}
+{%- set type = "article" -%}
+{%- elif section -%}
+{%- set description = section.description -%}
+{%- set title = section.title -%}
+{%- set type = "website" -%}
+{%- else -%}
+{%- set description = "This page does not exist or I broke it" -%}
+{%- set title = "I think its broken..." -%}
+{%- set type = "website" -%}
+{%- endif -%}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
+
+    <meta name="description" content="{{ description }}">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:url" content="{{ url }}">
+    <meta property="og:type" content="{{ type }}">
+
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <div class=" container">
+        <header>
+            <nav>
+                <a href="{{ get_url(path='/' ) }}">home</a>
+                <a href="{{ get_url(path='@/blog/_index.md') }}">blog</a>
+                <a href="{{ get_url(path='/tags') }}">tags</a>
+
+            </nav>
+        </header>
+        <section class="section">
+            {% block content %} {% endblock %}
+        </section>
+        <footer>
+            <a href="https://github.com/lewidot" target="_blank">Github</a>
+            <a href=" #top">Back to top</a>
+        </footer>
+    </div>
+
+</body>
+
+</html>

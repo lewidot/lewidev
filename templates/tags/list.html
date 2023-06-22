@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+<div class="archive">
+    <ul>
+        {% for tag in terms %}
+        <li class="tag-list"><a href="{{ tag.permalink | safe }}">#{{ tag.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock content %}
