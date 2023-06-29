@@ -17,6 +17,14 @@
 {%- set description = section.description -%}
 {%- set title = section.title -%}
 {%- set type = "website" -%}
+{%- elif terms -%}
+{%- set description = "List of tags to group content" -%}
+{%- set title = "tags" -%}
+{%- set type = "website" -%}
+{%- elif term -%}
+{%- set description = term.name -%}
+{%- set title = term.name -%}
+{%- set type = "website" -%}
 {%- else -%}
 {%- set description = "This page does not exist or I broke it" -%}
 {%- set title = "I think its broken..." -%}
