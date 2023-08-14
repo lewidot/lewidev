@@ -82,6 +82,11 @@ header {
 nav a {
     text-decoration: none;
     font-size: 1.2rem;
+    color: var(--text-colour);
+}
+
+footer a {
+    color: var(--text-colour);
 }
 
 
@@ -190,4 +195,67 @@ img {
     text-align: center;
     margin: 0 auto;
     height: 65vh;
+}
+
+#typed {
+    font-size: 5rem;
+    font-family: IAWriterQuattroS;
+    font-weight: 600;
+    color: var(--accent-primary);
+}
+
+.typed-div {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.typed-cursor {
+    font-size: 5rem;
+    color: var(--accent-primary);
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

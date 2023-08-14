@@ -2,6 +2,12 @@
 
 {% block content %}
 
+<div class="typed-div">
+    <span id="typed"></span>
+</div>
+
+
+
 <div>
     <h1>featured</h1>
     <ul>
@@ -18,6 +24,17 @@
 
 </div>
 
-
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<script>
+    const typed = new Typed('#typed', {
+        strings: ['Python', 'Automation', 'Testing'],
+        typeSpeed: 80,
+        loop: true,
+        backDelay: 1200,
+        backSpeed: 30,
+        showCursor: true,
+        cursorChar: '|'
+    });
+</script>
 
 {% endblock content %}
