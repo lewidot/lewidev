@@ -227,6 +227,10 @@ img {
     .typed-cursor {
         font-size: 3rem;
     }
+
+    h1 {
+        font-weight: 400;
+    }
 }
 
 @keyframes blink {
