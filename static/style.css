@@ -202,7 +202,10 @@ img {
     font-family: IAWriterQuattroS;
     font-weight: 600;
     color: var(--accent-primary);
+    word-wrap: break-word;
 }
+
+
 
 .typed-div {
     text-align: center;
@@ -216,6 +219,14 @@ img {
     -webkit-animation: blink 0.7s infinite;
     -moz-animation: blink 0.7s infinite;
     animation: blink 0.7s infinite;
+}
+
+@media only screen and (max-width: 600px) {
+
+    #typed,
+    .typed-cursor {
+        font-size: 3.5rem;
+    }
 }
 
 @keyframes blink {
