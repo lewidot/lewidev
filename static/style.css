@@ -295,6 +295,11 @@ img {
 
     }
 
+    .button {
+        background-color: var(--accent-secondary);
+        color: white;
+    }
+
 }
 
 @keyframes blink {
