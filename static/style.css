@@ -250,6 +250,33 @@ img {
     animation: blink 0.7s infinite;
 }
 
+.mc-field-group {
+    display: flex;
+    gap: 0.5rem;
+    padding: 2rem;
+
+}
+
+#mce-EMAIL {
+    background-color: white;
+}
+
+
+.button {
+    background-color: var(--accent-highlight);
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: var(--accent-secondary);
+    color: white;
+    cursor: pointer;
+}
+
+#backtotop {
+    padding: 1rem;
+}
+
 @media only screen and (max-width: 600px) {
 
     #typed,
@@ -260,6 +287,14 @@ img {
     h1 {
         font-weight: 400;
     }
+
+    .mc-field-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+    }
+
 }
 
 @keyframes blink {
@@ -302,29 +337,4 @@ img {
     100% {
         opacity: 1;
     }
-}
-
-#mc_embed_signup {
-    display: flex;
-    padding: 2rem;
-    margin: 0 5px;
-}
-
-#mce-EMAIL {
-    background-color: white;
-}
-
-.button {
-    background-color: var(--accent-highlight);
-    transition-duration: 0.4s;
-}
-
-.button:hover {
-    background-color: var(--accent-secondary);
-    color: white;
-    cursor: pointer;
-}
-
-#backtotop {
-    padding: 1rem;
 }
