@@ -46,6 +46,7 @@ h3 {
 
 h1,
 h2,
+h3,
 p,
 nav {
     padding: 1rem;
@@ -128,9 +129,12 @@ ul {
 
 pre {
     padding: 1.5rem;
-    border-radius: 10px;
+    border-radius: 6px;
     margin: 1rem;
     overflow: auto;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: #1d67f6;
 }
 
 code span {
@@ -139,13 +143,14 @@ code span {
 
 }
 
-code:not(.language-python, .language-rust, .language-sh, .language-go) {
-    border-radius: 5px;
+code:not(.language-python, .language-rust, .language-sh, .language-go, .language-html) {
+    border-radius: 6px;
     background-color: var(--accent-highlight);
     font-family: "JetBrains Mono";
     padding: 0 0.25rem;
     color: #1d67f6;
     font-size: 14px;
+
 }
 
 h1 {
@@ -159,6 +164,13 @@ h2 {
     font-family: Roboto;
     color: var(--accent-primary);
     margin-top: 2rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-family: Roboto;
+    color: var(--accent-primary);
+    margin-top: 1rem;
 }
 
 .title {
