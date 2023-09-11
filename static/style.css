@@ -38,6 +38,23 @@ body {
     line-height: 1.75;
 }
 
+button,
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    padding: 9px;
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: #1d67f6;
+}
+
+input:focus {
+    outline: none;
+}
+
 a,
 ul,
 h3 {
@@ -285,4 +302,29 @@ img {
     100% {
         opacity: 1;
     }
+}
+
+#mc_embed_signup {
+    display: flex;
+    padding: 2rem;
+    margin: 0 5px;
+}
+
+#mce-EMAIL {
+    background-color: white;
+}
+
+.button {
+    background-color: var(--accent-highlight);
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: var(--accent-secondary);
+    color: white;
+    cursor: pointer;
+}
+
+#backtotop {
+    padding: 1rem;
 }
