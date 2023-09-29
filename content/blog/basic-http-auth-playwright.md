@@ -2,13 +2,13 @@
 title = "Handling basic HTTP authentication with Playwright"
 date = 2023-07-08
 description = "How to handle basic HTTP authentication using Playwright and Python"
-draft = false
+draft = true
 
 [taxonomies]
 tags=["playwright", "python"]
 
 [extra]
-featured = true
+featured = false
 +++
 
 There are multiple ways that authentication is implemented on a website, most commonly through a login form that requires users' credentials to be input. However, some sites may implement [Basic HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme) where credentials are requested by the server and need to be handled differently.
