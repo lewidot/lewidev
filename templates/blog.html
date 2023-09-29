@@ -8,7 +8,9 @@
 
     <ul>
         {% for post in posts %}
-        <li class="blog-list"><a href="{{ post.permalink | safe }}">{{ post.title }}</a></li>
+        <li class="blog-list"><a href="{{ post.permalink | safe }}">{{ post.title }}</a>
+            <span class="post-date">{{ post.day }}/{{ post.month }}</span>
+        </li>
         {% endfor %}
     </ul>
 </div>
