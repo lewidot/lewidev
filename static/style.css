@@ -66,7 +66,7 @@ h2,
 h3,
 p,
 nav {
-    padding: 1rem;
+    padding: 0.75rem;
 }
 
 p a {
@@ -156,7 +156,7 @@ pre {
 
 code span {
     font-family: "JetBrains Mono";
-    font-size: 15px;
+    font-size: 1rem;
 
 }
 
@@ -166,7 +166,7 @@ code:not(.language-python, .language-rust, .language-sh, .language-go, .language
     font-family: "JetBrains Mono";
     padding: 0 0.25rem;
     color: #1d67f6;
-    font-size: 14px;
+    font-size: 0.95rem;
 
 }
 
@@ -180,7 +180,7 @@ h2 {
     font-size: 1.5rem;
     font-family: Roboto;
     color: var(--accent-primary);
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 h3 {
@@ -191,7 +191,7 @@ h3 {
 }
 
 .title {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .archive {
