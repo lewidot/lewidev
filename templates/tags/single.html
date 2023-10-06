@@ -5,9 +5,26 @@
 <div class="archive">
     <h2># {{ term.name }}</h2>
 
-    <ul>
+    <ul class="featured-posts">
         {% for page in term.pages %}
-        <li class="blog-list"><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+        <li class="blog-list">
+            <a class="blog-title" href="{{page.permalink}}">{{page.title}}</a>
+            <div class="blog-meta">
+                {% for tag in page.taxonomies.tags %}
+                {% set url = get_taxonomy_url(kind="tags", name=tag, lang=page.lang) %}
+                {% if tag == "python" %}
+                <a class="blog-tag tag-python" href="{{url | safe }}">{{ tag }}</a>
+                {% elif tag == "playwright" %}
+                <a class="blog-tag tag-playwright" href="{{url | safe }}">{{ tag }}</a>
+                {% elif tag == "web" %}
+                <a class="blog-tag tag-web" href="{{url | safe }}">{{ tag }}</a>
+                {% endif %}
+
+                {% endfor %}
+                <span class="blog-date">{{ page.date }}</span>
+            </div>
+
+        </li>
         {% endfor %}
     </ul>
 </div>

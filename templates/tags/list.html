@@ -5,9 +5,12 @@
 
 
 <div class="archive">
-    <ul>
+    <ul class="tag-list">
         {% for tag in terms %}
-        <li class="tag-list"><a href="{{ tag.permalink | safe }}">#{{ tag.name }}</a></li>
+        <li class="tag-item">
+            <a class="blog-tag tag-{{ tag.name }}" href="{{ tag.permalink | safe }}">#{{ tag.name}}</a>
+            <span class="tag-count">{{ tag.page_count }}</span>
+        </li>
         {% endfor %}
     </ul>
 </div>

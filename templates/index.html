@@ -2,38 +2,34 @@
 
 {% block content %}
 
-<div class="typed-div">
-    <span id="typed"></span>
-</div>
-
-
-
-<div>
-    <ul>
+<div id="featured">
+    <ul class="featured-posts">
         {% set blog_section=get_section(path="blog/_index.md" ) %} {% for page in blog_section.pages %} {%
         if
         page.extra.featured %}
-        <li class="blog-list"><a href="{{page.permalink}}">{{page.title}}</a></li>
+        <li class="blog-list">
+            <a class="blog-title" href="{{page.permalink}}">{{page.title}}</a>
+            <div class="blog-meta">
+                {% for tag in page.taxonomies.tags %}
+                {% set url = get_taxonomy_url(kind="tags", name=tag, lang=page.lang) %}
+                {% if tag == "python" %}
+                <a class="blog-tag tag-python" href="{{url | safe }}">{{ tag }}</a>
+                {% elif tag == "playwright" %}
+                <a class="blog-tag tag-playwright" href="{{url | safe }}">{{ tag }}</a>
+                {% elif tag == "web" %}
+                <a class="blog-tag tag-web" href="{{url | safe }}">{{ tag }}</a>
+                {% endif %}
 
-
+                {% endfor %}
+                <span class="blog-date">{{ page.date }}</span>
+            </div>
+        </li>
         {% endif %}
         {% endfor %}
     </ul>
-    <!-- <a href="{{ get_url(path='@/blog/_index.md') }}">more posts</a> -->
-
+    <a id="more-posts" href="{{ get_url(path='@/blog/_index.md') }}">more posts...</a>
 </div>
 
-<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-<script>
-    const typed = new Typed('#typed', {
-        strings: ['Python', 'Automation', 'Testing'],
-        typeSpeed: 80,
-        loop: true,
-        backDelay: 1200,
-        backSpeed: 30,
-        showCursor: true,
-        cursorChar: '|'
-    });
-</script>
+
 
 {% endblock content %}
