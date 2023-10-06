@@ -9,7 +9,7 @@
         {% for tag in terms %}
         <li class="tag-item">
             <a class="blog-tag tag-{{ tag.name }}" href="{{ tag.permalink | safe }}">#{{ tag.name}}</a>
-            <span class="tag-count">{{ tag.page_count | safe }}</span>
+            <!--<span class="tag-count">{{ tag.page_count | safe }}</span> -->
         </li>
         {% endfor %}
     </ul>
