@@ -1,0 +1,16 @@
+<div class="blog-meta">
+    {% for tag in page.taxonomies.tags %}
+    {% set url = get_taxonomy_url(kind="tags", name=tag, lang=page.lang) %}
+    {% if tag == "python" %}
+    <a class="blog-tag tag-python" href="{{url | safe }}">{{ tag }}</a>
+    {% elif tag == "playwright" %}
+    <a class="blog-tag tag-playwright" href="{{url | safe }}">{{ tag }}</a>
+    {% elif tag == "web" %}
+    <a class="blog-tag tag-web" href="{{url | safe }}">{{ tag }}</a>
+    {% elif tag == "selenium" %}
+    <a class="blog-tag tag-selenium" href="{{url | safe }}">{{ tag }}</a>
+    {% endif %}
+
+    {% endfor %}
+    <span class="blog-date">{{ page.date }}</span>
+</div>
