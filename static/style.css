@@ -222,7 +222,7 @@ input:focus {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 50vh;
+    max-height: fit-content;
 }
 
 
@@ -306,6 +306,16 @@ input:focus {
 .tag-web:hover {
     background-color: rgba(0, 51, 255, 0.985);
     color: var(--bt-white);
+}
+
+.tag-selenium {
+    background-color: rgba(62, 224, 26, 0.757);
+    color: var(--bt-black);
+}
+
+.tag-selenium:hover {
+    background-color: rgba(66, 246, 25, 0.757);
+    color: var(--bt-black);
 }
 
 #more-posts {
