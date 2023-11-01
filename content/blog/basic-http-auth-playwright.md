@@ -1,19 +1,19 @@
 +++
 title = "Handling basic HTTP authentication with Playwright"
-date = 2023-07-08
-description = "How to handle basic HTTP authentication using Playwright and Python"
-draft = true
+date = 2023-11-01
+description = "Tutorial on how to handle basic HTTP authentication in Python using the Playwright library."
+draft = false
 
 [taxonomies]
 tags=["playwright", "python"]
 
 [extra]
-featured = false
+featured = true
 +++
 
-There are multiple ways that authentication is implemented on a website, most commonly through a login form that requires users' credentials to be input. However, some sites may implement [Basic HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme) where credentials are requested by the server and need to be handled differently.
+There are multiple ways that authentication is implemented on a website, most commonly through a login form that requires users' credentials to be input. However, some sites may implement [Basic HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme) where credentials are requested by the server and are not handled by an interactive form in the browser.
 
-Let’s start with writing a Python script that uses Playwright to visit a website that implements basic HTTP authentication.
+Let’s start with writing a Python script that uses Playwright to visit a website that implements basic HTTP authentication. See [Getting started with Playwright in Python](https://lewi.dev/blog/getting-started-with-playwright-in-python/) for an introduction to the basics if required.
 
 ```python
 from playwright.sync_api import sync_playwright
@@ -31,7 +31,7 @@ Run the script and open the screenshot that this script captured, you will see s
 
 ![Screenshot showing authorization error.](/images/http-basic-auth-playwright-unauthorized.png)
 
-This page implements basic HTTP authentication which requires a username and password, these are both `admin` for this particular site. There are several ways to handle this with our Playwright script.
+This page implements basic HTTP authentication, which requires a username and password. These are both `admin` for this particular site. There are several ways to handle this with our Playwright script.
 
 ## Deprecated method using URL
 
