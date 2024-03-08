@@ -319,6 +319,16 @@ input:focus {
     color: var(--bt-black);
 }
 
+.tag-pytest {
+    background-color: rgba(249, 35, 209, 0.825);
+    color: var(--bt-white);
+}
+
+.tag-pytest:hover {
+    background-color: rgba(249, 10, 205, 0.95);
+    color: var(--bt-white);
+}
+
 #more-posts {
     margin-top: 2rem;
     align-self: center;
