@@ -7,7 +7,7 @@ draft = false
 tags=["playwright", "python"]
 
 [extra]
-featured = true
+featured = false
 +++
 
 [Playwright](https://playwright.dev/) is an open source project, created by Microsoft, that is designed and marketed as a modern solution to browser automation and end-to-end testing. It is a major competitor to the popular project, [Selenium](https://www.selenium.dev). Paired with the Python programming language, it provides us with a very capable set of tools to automate interactions with websites and APIs. In this post, I will step through how we can setup our development environment and write a simple Python script that will automate an interaction on a webpage.
