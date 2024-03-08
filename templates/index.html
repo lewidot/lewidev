@@ -1,22 +1,17 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <div id="featured">
+    <h1>Latest posts</h1>
     <ul class="featured-posts">
-        {% set blog_section=get_section(path="blog/_index.md" ) %} {% for page in blog_section.pages %} {%
-        if
-        page.extra.featured %}
+        {% set blog_section=get_section(path="blog/_index.md" ) %} {% for page
+        in blog_section.pages %} {% if page.extra.featured %}
         <li class="blog-list">
             <a class="blog-title" href="{{page.permalink}}">{{page.title}}</a>
             {% include "partials/blog-meta.html" -%}
         </li>
-        {% endif %}
-        {% endfor %}
+        {% endif %} {% endfor %}
     </ul>
     <a id="more-posts" href="{{ get_url(path='@/blog/_index.md') }}">more posts...</a>
 </div>
-
-
 
 {% endblock content %}
