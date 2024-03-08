@@ -9,6 +9,8 @@
     <a class="blog-tag tag-web" href="{{url | safe }}">{{ tag }}</a>
     {% elif tag == "selenium" %}
     <a class="blog-tag tag-selenium" href="{{url | safe }}">{{ tag }}</a>
+    {% elif tag == "pytest" %}
+    <a class="blog-tag tag-pytest" href="{{url | safe }}">{{ tag }}</a>
     {% endif %}
 
     {% endfor %}
