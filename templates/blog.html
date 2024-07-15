@@ -1,24 +1,22 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
 
-{% block content %}
+<div class="space-y-4">
+  <div>
+    <h1 class="text-2xl flex gap-2 items-center my-6 cursor-pointer">Blog</h1>
+    {% for page in section.pages %}
 
-{% for year, pages in section.pages | group_by(attribute="year") %}
-<div class="archive">
-    <h2>{{ year }}</h2>
-
-    <ul class="featured-posts">
-        {% for page in pages %}
-        <li class="blog-list">
-            <a class="blog-title" href="{{page.permalink}}">{{page.title}}</a>
-            {% include "partials/blog-meta.html" -%}
-
-        </li>
-        {% endfor %}
-    </ul>
+    <article class="mb-8">
+      <a class="flex justify-between items-start" href="{{page.permalink}}"
+        ><h2 class="text-lg hover:underline decoration-grey-100 hover:decoration-1 mb-1">{{page.title}}</h2>
+        <span class="text-sm">{{page.date}}</span>
+      </a>
+      <p class="text-sm text-grey-400 max-w-[75%]">{{page.description}}</p>
+      {% for tag in page.taxonomies.tags %} {% set url = get_taxonomy_url(kind="tags", name=tag,
+      lang=page.lang) %}
+      <a class="inline-block mr-2 text-sm text-grey-400 hover:underline" href="{{url | safe }}">#{{ tag }}</a>
+      {% endfor %}
+    </article>
+    {% endfor %}
+  </div>
 </div>
-
-
-{% endfor %}
-
-
 {% endblock content %}

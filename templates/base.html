@@ -1,102 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- Set url variable -->
+  {%- if current_url -%} {%- set url = current_url -%} {%- else -%} {%- set url = config.base_url ~ "/404/"
+  -%} {%- endif -%}
 
-<!-- Set url variable -->
-{%- if current_url -%}
-{%- set url = current_url -%}
-{%- else -%}
-{%- set url = config.base_url ~ "/404/" -%}
-{%- endif -%}
+  <!-- Set page/section specific variables -->
+  {%- if page -%} {%- set description = page.description -%} {%- set title = page.title -%} {%- set type =
+  "article" -%} {%- elif section -%} {%- set description = section.description -%} {%- set title =
+  section.title -%} {%- set type = "website" -%} {%- elif terms -%} {%- set description = "List of tags to
+  group content" -%} {%- set title = "tags" -%} {%- set type = "website" -%} {%- elif term -%} {%- set
+  description = term.name -%} {%- set title = term.name -%} {%- set type = "website" -%} {%- else -%} {%- set
+  description = "This page does not exist or I broke it" -%} {%- set title = "I think its broken..." -%} {%-
+  set type = "website" -%} {%- endif -%}
 
-<!-- Set page/section specific variables -->
-{%- if page -%}
-{%- set description = page.description -%}
-{%- set title = page.title -%}
-{%- set type = "article" -%}
-{%- elif section -%}
-{%- set description = section.description -%}
-{%- set title = section.title -%}
-{%- set type = "website" -%}
-{%- elif terms -%}
-{%- set description = "List of tags to group content" -%}
-{%- set title = "tags" -%}
-{%- set type = "website" -%}
-{%- elif term -%}
-{%- set description = term.name -%}
-{%- set title = term.name -%}
-{%- set type = "website" -%}
-{%- else -%}
-{%- set description = "This page does not exist or I broke it" -%}
-{%- set title = "I think its broken..." -%}
-{%- set type = "website" -%}
-{%- endif -%}
-
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="/_vercel/insights/script.js"></script>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/output.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
-    <link rel="icon" type="image/png" href="/favicon_chevron.png">
-    <meta name="description" content="{{ description }}">
-    <meta property="og:site_name" content="lewi.dev">
-    <meta property="og:title" content="{{ title }}">
-    <meta property="og:url" content="{{ url }}">
-    <meta property="og:type" content="{{ type }}">
-    <meta property="og:description" content="{{ description }}">
+    <link rel="icon" type="image/png" href="/favicon_chevron.png" />
+    <meta name="description" content="{{ description }}" />
+    <meta property="og:site_name" content="lewi.dev" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:url" content="{{ url }}" />
+    <meta property="og:type" content="{{ type }}" />
+    <meta property="og:description" content="{{ description }}" />
 
     <title>{{ title }}</title>
-</head>
+  </head>
 
-<body>
-    <header>
-        <nav>
-            <a href="{{ get_url(path='/' ) }}">home</a>
-            <a href="{{ get_url(path='@/blog/_index.md') }}">blog</a>
-            <a href="{{ get_url(path='/tags') }}">tags</a>
-
-        </nav>
-    </header>
-    <main>
-        <article>
-            {% block content %} {% endblock %}
-        </article>
-    </main>
-    <footer>
-        <div id="mc_embed_signup">
-            <form
-                action="https://gmail.us11.list-manage.com/subscribe/post?u=13194c5558d30926093337dc9&amp;id=47a8f2476c&amp;f_id=007a89e0f0"
-                method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
-                target="_blank" novalidate="">
-                <div id="mc_embed_signup_scroll">
-                    <div class="mc-field-group">
-                        <input type="email" name="EMAIL" class="required email" id="mce-EMAIL"
-                            placeholder="test@lewi.dev">
-                        <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button"
-                            value="Subscribe">
-                    </div>
-                    <div id="mce-responses" class="clear foot">
-                        <div class="response" id="mce-error-response" style="display: none;"></div>
-                        <div class="response" id="mce-success-response" style="display: none;"></div>
-                    </div>
-                    <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                        /* real people should not fill this in and expect good things - do not remove this or risk
-                        form bot signups */
-                        <input type="text" name="b_13194c5558d30926093337dc9_47a8f2476c" tabindex="-1" value="">
-                    </div>
-                </div>
-            </form>
+  <body class="antialiased bg-grey-50 dark:bg-grey-950 text-grey-800 dark:text-grey-100">
+    <main class="max-w-[712px] mx-auto md:py-10 px-4 min-h-[calc(100vh-50px-100px)] mb-10">
+      <aside class="-ml-[8px] mb-12 mt-10 tracking-tight">
+        <div class="lg:sticky lg:top-20">
+          <nav
+            class="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
+            id="nav"
+          >
+            <div class="flex flex-row space-x-0 pr-10">
+              <a
+                class="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2"
+                href="{{ get_url(path='/' ) }}"
+                >home</a
+              >
+              <a
+                class="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2"
+                href="{{ get_url(path='@/blog/_index.md') }}"
+                >blog</a
+              >
+              <a
+                class="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2"
+                href="{{ get_url(path='/tags') }}"
+                >tags</a
+              >
+            </div>
+          </nav>
         </div>
-
-    </footer>
-
-</body>
-
+      </aside>
+      {% block content %} {% endblock %}
+    </main>
+  </body>
 </html>
