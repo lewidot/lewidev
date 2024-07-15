@@ -3,6 +3,10 @@ module.exports = {
   content: ["./templates/**/*.html"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["geist", "system-ui"],
+        mono: ["monospace"],
+      },
       colors: {
         grey: {
           50: "#f7f6f6",
@@ -20,5 +24,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
