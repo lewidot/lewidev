@@ -14,7 +14,7 @@ taxonomies = [{ name = "tags", feed = true, render = true }]
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
 
-highlight_theme = "OneHalfDark"
+highlight_theme = "css"
 
 external_links_target_blank = true
 

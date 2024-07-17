@@ -10,9 +10,9 @@ tags=["playwright", "pytest"]
 featured = true
 +++
 
-[Pytest](https://docs.pytest.org/en/stable/) is currently the best choice when it comes to picking a testing framework in Python. It provides a solid set of functionality for writing maintainable and intentional tests. Pair this with Playwright and we can design tests that interact with our web applications and verify, with confidence, that they are working as intended. In this article we are going to build a test script that will automate a login form on a website and check that the login is successful or not. 
+[Pytest](https://docs.pytest.org/en/stable/) is currently the best choice when it comes to picking a testing framework in Python. It provides a solid set of functionality for writing maintainable and intentional tests. Pair this with Playwright and we can design tests that interact with our web applications and verify, with confidence, that they are working as intended. In this article we are going to build a test script that will automate a login form on a website and check that the login is successful or not.
 
-## Project setup
+### Project setup
 
 To get started there are a few steps we must take to get our project setup.
 
@@ -27,7 +27,7 @@ Next create a virtual environment and activate it.
 
 ```sh
 python3 -m venv venv
-source venv/bin/activate  
+source venv/bin/activate
 ```
 
 We can now install our dependencies. We will be using [Pytest](https://docs.pytest.org/en/stable) as the testing framework, [Playwright](https://playwright.dev/python/) for interacting with the website and [pytest-playwright](https://pypi.org/project/pytest-playwright/), which is a pytest plugin.
@@ -46,7 +46,7 @@ playwright install
 
 With these steps complete, we can now move onto writing our test script.
 
-## Writing a pytest test function
+### Writing a pytest test function
 
 Pytest enforces some good configuration by default. A good example of this is that it looks for tests in `test_*.py` or `*_test.py` files. Therefore, in our project we will create a file called `test_login.py`.
 
@@ -69,7 +69,7 @@ def test_login_valid_credentials() -> None:
     # Click the Login button
 
     # Assert that we have been directed to the secure page
-    
+
     pass
 ```
 
@@ -112,6 +112,7 @@ pytest
 We should see that this test has passed. If you replace the input values and rerun `pytest` you will see that the test still passes. This is only because each line in our test function has been executed successfully, it does not validate the behaviour of the login. We can validate that the login has worked by adding an assertion to our test. If the login is successful we should get directed to the `secure` page of the website. Therefore we can assert that the current url after logging in is `https://the-internet.herokuapp.com/secure`.
 
 ## Playwright assertions
+
 With Playwright we have access to their own custom assertion functionality, which you can learn more about [here](https://playwright.dev/python/docs/test-assertions). With the `expect` function we can build out assertions on our page object and also on locators. We can import this from the Playwright library at the top of our file.
 
 ```python

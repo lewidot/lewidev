@@ -1,13 +1,29 @@
-{% extends "base.html" %}
-
-{% block content %}
-<div class="post-header">
+{% extends "base.html" %} {% block content %}
+<div>
+  <div style="opacity: 1; transform: none">
+    <article class="py-6 prose dark:prose-invert">
+      <div class="mb-10">
+        <h1 class="mb-2 text-2xl">{{ page.title }}</h1>
+        <p class="text-base mt-0">{{ page.date }}</p>
+        {% for tag in page.taxonomies.tags %} {% set url = get_taxonomy_url(kind="tags", name=tag,
+        lang=page.lang) %}
+        <a class="inline-block mr-2 text-sm text-grey-400 hover:underline" href="{{url | safe }}"
+          >#{{ tag }}</a
+        >
+        {% endfor %}
+      </div>
+      {{ page.content | safe }}
+      <a href="#top">Back to top^</a>
+    </article>
+  </div>
+</div>
+<!-- <div class="post-header">
     <h1 class="title">
         {{ page.title }}
     </h1>
     {% include "partials/blog-meta.html" -%}
 </div>
 {{ page.content | safe }}
-<a href=" #top" id="backtotop">Back to top^</a>
+<a href=" #top" id="backtotop">Back to top^</a> -->
 
 {% endblock content %}
