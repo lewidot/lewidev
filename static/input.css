@@ -44,7 +44,7 @@
 
 @layer base {
   .prose {
-    @apply prose-headings:!mb-3 prose-p:text-grey-800 prose-p:dark:text-grey-100;
+    @apply prose-headings:!mb-4 prose-p:text-grey-800 prose-p:dark:text-grey-100 prose-headings:!font-semibold;
   }
 
   .prose {
