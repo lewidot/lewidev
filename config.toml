@@ -1,6 +1,10 @@
 # The URL the site will be built for
 base_url = "https://lewi.dev"
 
+default_language = "en"
+generate_feeds = true
+author = "Lewis Evans"
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
 
