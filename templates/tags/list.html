@@ -1,17 +1,11 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
 
-{% block content %}
-
-
-
-<div class="archive">
-    <ul class="tag-list">
-        {% for tag in terms %}
-        <li class="tag-item">
-            <a class="blog-tag tag-{{ tag.name }}" href="{{ tag.permalink | safe }}">#{{ tag.name}}</a>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
+<ul>
+  {% for tag in terms %}
+  <li>
+    <a class="text-2xl hover:underline" href="{{ tag.permalink | safe }}">#{{ tag.name}}</a>
+  </li>
+  {% endfor %}
+</ul>
 
 {% endblock content %}
