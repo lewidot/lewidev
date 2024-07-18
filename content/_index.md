@@ -1,5 +1,5 @@
 +++
-title = "Lewi - Python, Automation and Testing"
+title = "Lewi"
 template = "index.html"
-description = "Personal website for creating and sharing content focused on programming, testing and automation"
+description = "💫 My personal website for sharing content focused on programming, testing and automation"
 +++
