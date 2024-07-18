@@ -1,6 +1,10 @@
 # The URL the site will be built for
 base_url = "https://lewi.dev"
 
+default_language = "en"
+generate_feeds = true
+author = "Lewis Evans"
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
 
@@ -14,7 +18,7 @@ taxonomies = [{ name = "tags", feed = true, render = true }]
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
 
-highlight_theme = "nord"
+highlight_theme = "css"
 
 external_links_target_blank = true
 

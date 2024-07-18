@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "geist";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/Geist-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "geist";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/Geist-Semibold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "geist";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("fonts/Geist-Black.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "geist-mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/GeistMono-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "geist-mono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/GeistMono-Semibold.woff2") format("woff2");
+}
+
+@layer base {
+  .prose {
+    @apply prose-headings:!mb-4 prose-p:text-grey-800 prose-p:dark:text-grey-100 prose-headings:!font-semibold;
+  }
+
+  .prose {
+    :not(pre) > code {
+      @apply bg-grey-100 dark:bg-grey-950;
+    }
+    .z-code {
+      @apply text-one-half-light-base bg-one-half-light-white dark:text-one-half-dark-white dark:bg-one-half-dark-base;
+    }
+
+    .z-comment {
+      @apply text-one-half-light-grey dark:text-one-half-dark-grey;
+    }
+    .z-variable.z-parameter.z-function {
+      @apply text-one-half-light-base dark:text-one-half-dark-white;
+    }
+    .z-keyword {
+      @apply text-one-half-light-purple dark:text-one-half-dark-purple;
+    }
+    .z-variable {
+      @apply text-one-half-light-orange dark:text-one-half-dark-orange;
+    }
+
+    .z-entity.z-name.z-function,
+    .z-meta.z-require,
+    .z-support.z-function.z-any-method {
+      @apply text-one-half-light-blue dark:text-one-half-dark-blue;
+    }
+    .z-support.z-class,
+    .z-entity.z-name.z-class,
+    .z-entity.z-name.z-type.z-class {
+      @apply text-one-half-light-yellow dark:text-one-half-dark-yellow;
+    }
+    .z-meta.z-class {
+      @apply text-one-half-light-yellow dark:text-one-half-dark-yellow;
+    }
+    .z-keyword.z-other.z-special-method {
+      @apply text-one-half-light-blue dark:text-one-half-dark-blue;
+    }
+    .z-storage {
+      @apply text-one-half-light-purple dark:text-one-half-dark-purple;
+    }
+    .z-support.z-function {
+      @apply text-one-half-light-blue dark:text-one-half-dark-blue;
+    }
+    .z-string {
+      @apply text-one-half-light-green dark:text-one-half-dark-green;
+    }
+    .z-constant.z-numeric {
+      @apply text-one-half-light-yellow dark:text-one-half-dark-yellow;
+    }
+    .z-none {
+      @apply text-one-half-light-yellow dark:text-one-half-dark-yellow;
+    }
+    .z-none {
+      @apply text-one-half-light-yellow dark:text-one-half-dark-yellow;
+    }
+    .z-constant {
+      @apply text-one-half-light-yellow dark:text-one-half-dark-yellow;
+    }
+    .z-entity.z-name.z-tag {
+      @apply text-one-half-light-orange dark:text-one-half-dark-orange;
+    }
+    .z-entity.z-other.z-attribute-name {
+      @apply text-one-half-light-yellow dark:text-one-half-dark-yellow;
+    }
+    .z-entity.z-other.z-attribute-name.z-id,
+    .z-punctuation.z-definition.z-entity {
+      @apply text-one-half-light-yellow dark:text-one-half-dark-yellow;
+    }
+    .z-meta.z-selector {
+      @apply text-one-half-light-purple dark:text-one-half-dark-purple;
+    }
+    .z-markup.z-heading .z-punctuation.z-definition.z-heading,
+    .z-entity.z-name.z-section {
+      @apply text-one-half-light-blue dark:text-one-half-dark-blue;
+    }
+    .z-markup.z-bold,
+    .z-punctuation.z-definition.z-bold {
+      @apply text-one-half-light-purple dark:text-one-half-dark-purple;
+    }
+    .z-markup.z-italic,
+    .z-punctuation.z-definition.z-italic {
+      @apply text-one-half-light-purple dark:text-one-half-dark-purple;
+    }
+    .z-markup.z-raw.z-inline {
+      @apply text-one-half-light-green dark:text-one-half-dark-green;
+    }
+    .z-meta.z-link {
+      @apply text-one-half-light-green dark:text-one-half-dark-green;
+    }
+    .z-markup.z-quote {
+      @apply text-one-half-light-green dark:text-one-half-dark-green;
+    }
+    .z-source.z-java .z-meta.z-class.z-java .z-meta.z-method.z-java {
+      @apply text-one-half-light-base dark:text-one-half-dark-white;
+    }
+    .z-source.z-java .z-meta.z-class.z-java .z-meta.z-class.z-body.z-java {
+      @apply text-one-half-light-base dark:text-one-half-dark-white;
+    }
+    .z-source.z-js .z-meta.z-function.z-js .z-variable.z-parameter.z-function.z-js {
+      @apply text-one-half-light-orange dark:text-one-half-dark-orange;
+    }
+    .z-source.z-js .z-variable.z-other.z-readwrite.z-js {
+      @apply text-one-half-light-orange dark:text-one-half-dark-orange;
+    }
+    .z-source.z-js .z-variable.z-other.z-object.z-js {
+      @apply text-one-half-light-base dark:text-one-half-dark-white;
+    }
+    .z-source.z-js .z-meta.z-function-call.z-method.z-js .z-variable.z-other.z-readwrite.z-js {
+      @apply text-one-half-light-orange dark:text-one-half-dark-orange;
+    }
+    .z-source.z-js .z-meta.z-block.z-js .z-variable.z-other.z-readwrite.z-js {
+      @apply text-one-half-light-orange dark:text-one-half-dark-orange;
+    }
+    .z-source.z-js .z-meta.z-block.z-js .z-variable.z-other.z-object.z-js {
+      @apply text-one-half-light-base dark:text-one-half-dark-white;
+    }
+    .z-source.z-js
+      .z-meta.z-block.z-js
+      .z-meta.z-function-call.z-method.z-js
+      .z-variable.z-other.z-readwrite.z-js {
+      @apply text-one-half-light-base dark:text-one-half-dark-white;
+    }
+    .z-source.z-js .z-meta.z-function-call.z-method.z-js .z-variable.z-function.z-js {
+      @apply text-one-half-light-base dark:text-one-half-dark-white;
+    }
+    .z-source.z-js .z-meta.z-property.z-object.z-js .z-entity.z-name.z-function.z-js {
+      @apply text-one-half-light-blue dark:text-one-half-dark-blue;
+    }
+    .z-source.z-js .z-support.z-constant.z-prototype.z-js {
+      @apply text-one-half-light-base dark:text-one-half-dark-white;
+    }
+    .z-markup.z-inserted {
+      color: #98c379;
+    }
+    .z-markup.z-deleted {
+      color: #e06c75;
+    }
+    .z-markup.z-changed {
+      color: #e5c07b;
+    }
+    .z-string.z-regexp {
+      @apply text-one-half-light-green dark:text-one-half-dark-green;
+    }
+    .z-constant.z-character.z-escape {
+      color: #0997b3;
+    }
+    .z-invalid.z-illegal {
+      color: #fafafa;
+      background-color: #e06c75;
+    }
+    .z-invalid.z-broken {
+      color: #fafafa;
+      background-color: #e5c07b;
+    }
+    .z-invalid.z-deprecated {
+      color: #fafafa;
+      background-color: #e5c07b;
+    }
+    .z-invalid.z-unimplemented {
+      color: #fafafa;
+      background-color: #c678dd;
+    }
+  }
+}
