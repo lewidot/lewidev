@@ -38,8 +38,7 @@ The first step to achieving this is to locate these elements on the webpage.
 This is the HTML for the username input field:
 
 ```html
-<label for="username">Username</label>
-<input type="text" name="username" id="username">
+<label for="username">Username</label> <input type="text" name="username" id="username" />
 ```
 
 To interact with this HTML element in our script we will create a Playwright locator. As we can see this form input has a label and Playwright provides us with a `get_by_label` method we can use to create our locator.
@@ -60,7 +59,7 @@ The third element we need to create a locator for is the login button.
 
 ```html
 <button class="radius" type="submit">
-    <i class="fa fa-2x fa-sign-in"> Login</i>
+  <i class="fa fa-2x fa-sign-in"> Login</i>
 </button>
 ```
 
@@ -87,7 +86,7 @@ To click the button we can use the `click` method.
 page.get_by_role(role="button", name="Login").click()
 ```
 
-With these steps complete we can run our python script. We can also add the `headless` and `slowmo` options when initialising our browser object so that we can see the results on the screen.
+With these steps complete we can run our python script. We can also add the `headless` and `slow_mo` options when initialising our browser object so that we can see the results on the screen.
 
 ```python
 from playwright.sync_api import sync_playwright
