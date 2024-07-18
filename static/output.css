@@ -447,7 +447,8 @@ video {
 }
 
 .prose :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
-  margin-bottom: 0.75rem !important;
+  margin-bottom: 1rem !important;
+  font-weight: 600 !important;
 }
 
 .prose :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
@@ -1731,6 +1732,11 @@ video {
   line-height: 2rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -1763,6 +1769,11 @@ video {
 .text-grey-800 {
   --tw-text-opacity: 1;
   color: rgb(60 54 51 / var(--tw-text-opacity));
+}
+
+.text-grey-600 {
+  --tw-text-opacity: 1;
+  color: rgb(88 78 73 / var(--tw-text-opacity));
 }
 
 .decoration-grey-100 {
@@ -1915,6 +1926,11 @@ video {
   .dark\:text-grey-100 {
     --tw-text-opacity: 1;
     color: rgb(230 226 225 / var(--tw-text-opacity));
+  }
+
+  .dark\:text-grey-200 {
+    --tw-text-opacity: 1;
+    color: rgb(205 197 194 / var(--tw-text-opacity));
   }
 
   .dark\:text-grey-300 {
