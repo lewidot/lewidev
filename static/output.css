@@ -1766,14 +1766,14 @@ video {
   color: rgb(112 97 92 / var(--tw-text-opacity));
 }
 
-.text-grey-800 {
-  --tw-text-opacity: 1;
-  color: rgb(60 54 51 / var(--tw-text-opacity));
-}
-
 .text-grey-600 {
   --tw-text-opacity: 1;
   color: rgb(88 78 73 / var(--tw-text-opacity));
+}
+
+.text-grey-800 {
+  --tw-text-opacity: 1;
+  color: rgb(60 54 51 / var(--tw-text-opacity));
 }
 
 .decoration-grey-100 {
@@ -1812,7 +1812,7 @@ video {
 
   font-display: swap;
 
-  src: url("fonts/Geist-Semibold.woff2") format("woff2");
+  src: url("fonts/Geist-SemiBold.woff2") format("woff2");
 }
 
 @font-face {
@@ -1848,7 +1848,7 @@ video {
 
   font-display: swap;
 
-  src: url("fonts/GeistMono-Semibold.woff2") format("woff2");
+  src: url("fonts/GeistMono-SemiBold.woff2") format("woff2");
 }
 
 @media (prefers-color-scheme: dark) {
