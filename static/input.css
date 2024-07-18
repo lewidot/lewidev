@@ -15,7 +15,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("fonts/Geist-Semibold.woff2") format("woff2");
+  src: url("fonts/Geist-SemiBold.woff2") format("woff2");
 }
 
 @font-face {
@@ -39,7 +39,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("fonts/GeistMono-Semibold.woff2") format("woff2");
+  src: url("fonts/GeistMono-SemiBold.woff2") format("woff2");
 }
 
 @layer base {
