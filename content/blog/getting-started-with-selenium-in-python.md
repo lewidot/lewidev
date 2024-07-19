@@ -50,7 +50,7 @@ To install the Selenium library into our virtual environment, we will use `pip` 
 pip install selenium
 ```
 
-This will have installed the library into our virtual environment. The version I am using is `4.15.2`. With the introduction of [Selenium Manager](https://www.selenium.dev/blog/2022/introducing-selenium-manager/) in version `4.6.0`, we do not have to worry about installing browser drivers manually. We are now ready to begin writing the Python script.
+This will have installed the library into our virtual environment. The version I am using is `4.22.0`. With the introduction of [Selenium Manager](https://www.selenium.dev/blog/2022/introducing-selenium-manager/) in version `4.6.0`, we do not have to worry about installing browser drivers manually. We are now ready to begin writing the Python script.
 
 ## Writing our first script
 
@@ -62,12 +62,19 @@ To be able to use Selenium in our script, we must first import it. In order to i
 from selenium import webdriver
 ```
 
+The entry point to our program is going to be through a `main` function, as this is considered idiomatic Python.
+
+```python
+def main() -> None:
+```
+
 Now we can create our driver object using a browser class from the webdriver module. This will allow us to interact with a website through the selected browser.
 
 ```python
 from selenium import webdriver
 
-driver = webdriver.Chrome()
+def main() -> None: 
+    driver = webdriver.Chrome()
 ```
 
 We can now use the `get` method to visit a website. We just need to pass the URL to the method as a string. For this example, I will use [Google](https://www.google.com). To ensure our browser shuts down gracefully at the end of our script, we can use the `close` method from the driver object.
@@ -75,9 +82,24 @@ We can now use the `get` method to visit a website. We just need to pass the URL
 ```python
 from selenium import webdriver
 
-driver = webdriver.Chrome()
-driver.get("https://www.google.com")
-driver.close()
+def main() -> None:
+    driver = webdriver.Chrome()
+    driver.get("https://www.google.com")
+    driver.close()
+```
+
+With our `main` function defined, we must add the following code to the bottom of our file to call the main function. I know it looks strange but you can read more about it [here](https://docs.python.org/3/library/__main__.html).
+
+```python
+from selenium import webdriver
+
+def main() -> None:
+    driver = webdriver.Chrome()
+    driver.get("https://www.google.com")
+    driver.close()
+
+if __name__ == "__main__":
+    main()    
 ```
 
 In our terminal we can run our Python file by simply calling the python executable and the name of the file.
@@ -102,16 +124,15 @@ With our `options` object initialised, we now need to add the `--headless` argum
 options.add_argument("--headless=new")
 ```
 
-Now we can pass this into the `Chrome` class in our script as the `options` argument. Which should result in our script looking like this.
+Now we can pass this into the `Chrome` class in our script as the `options` argument. Which should result in our `main` function looking like this.
 
 ```python
-from selenium import webdriver
-
-options = webdriver.ChromeOptions()
-options.add_argument("--headless=new")
-driver = webdriver.Chrome(options=options)
-driver.get("https://www.google.com")
-driver.close()
+def main() -> None:
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless=new")
+    driver = webdriver.Chrome(options=options)
+    driver.get("https://www.google.com")
+    driver.close()
 ```
 
 If you rerun the program, you should now no longer see the Chrome browser opened up.
@@ -121,12 +142,16 @@ From here we can expand the functionality of our script as far as we want. For n
 ```python
 from selenium import webdriver
 
-options = webdriver.ChromeOptions()
-options.add_argument("--headless=new")
-driver = webdriver.Chrome(options=options)
-driver.get("https://www.google.com")
-print(driver.title)
-driver.close()
+def main() -> None:
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless=new")
+    driver = webdriver.Chrome(options=options)
+    driver.get("https://www.google.com")
+    print(driver.title)
+    driver.close()
+
+if __name__ == "__main__":
+    main()    
 ```
 
 If we run this again, you should see `Google` printed to the terminal.

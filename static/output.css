@@ -1776,6 +1776,11 @@ video {
   color: rgb(60 54 51 / var(--tw-text-opacity));
 }
 
+.text-purple-500 {
+  --tw-text-opacity: 1;
+  color: rgb(168 85 247 / var(--tw-text-opacity));
+}
+
 .decoration-grey-100 {
   text-decoration-color: #e6e2e1;
 }
