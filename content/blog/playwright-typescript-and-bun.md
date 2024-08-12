@@ -277,4 +277,38 @@ We can run each of these commands individually with `bun run` whenever we need t
 
 Now each time we run the command `bun run test` our project will be formatted, type-checked and linted before the tests are run. This will tighten our feedback loop so that our code always stays consistent and correct. Most editors can also integrate with these tools and provide this feedback immediately without needing to run the scripts.
 
+## Using Bun in Github Actions
+
+Our final task is to update the Github Action that we created when initialising the project. By default it uses `npm` but as we are using `bun` we must make a couple of changes. We can use `oven-sh/setup-bun` instead of `actions/setup-node` and update the subsequent run commands accordingly.
+
+```yaml
+name: Playwright Tests
+on:
+    push:
+        branches: [main, master]
+    pull_request:
+        branches: [main, master]
+jobs:
+    test:
+        timeout-minutes: 60
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: oven-sh/setup-bun@v2
+              with:
+                  bun-version: latest
+            - name: Install dependencies
+              run: bun install
+            - name: Install Playwright Browsers
+              run: bun playwright install --with-deps
+            - name: Run Playwright tests
+              run: bun playwright test
+            - uses: actions/upload-artifact@v4
+              if: always()
+              with:
+                  name: playwright-report
+                  path: playwright-report/
+                  retention-days: 30
+```
+
 This project structure sets up a good foundation to build upon and allows you to focus on the most important thing, writing tests.
